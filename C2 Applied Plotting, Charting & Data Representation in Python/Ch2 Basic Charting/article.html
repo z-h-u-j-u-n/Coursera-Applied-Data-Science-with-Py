@@ -1,0 +1,1550 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:doi="http://dx.doi.org/"
+      lang="en" xml:lang="en"
+      itemscope itemtype="http://schema.org/Article"
+      class="no-js">
+
+
+
+<head prefix="og: http://ogp.me/ns#">
+  <title>Ten Simple Rules for Better Figures</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/ploscompbiol/resource/compiled/asset_WQYZASKLPK65GPI3YXAYQEMXWRCGNBW6.css" />
+
+  <!-- allows for  extra head tags -->
+
+
+<!-- hello -->
+<link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600">
+
+<link media="print" rel="stylesheet" type="text/css"  href="/ploscompbiol/resource/css/print.css"/>
+    <script type="text/javascript">
+        var siteUrlPrefix = "/ploscompbiol/";
+    </script>
+<script src="/ploscompbiol/resource/compiled/asset_SC5JIUGEUPR4P4P6VBUINUVOVUSU3NRY.js"></script>
+
+  <link rel="shortcut icon" href="/ploscompbiol/resource/img/favicon.ico" type="image/x-icon"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+
+
+  <link rel="canonical" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833" />
+
+
+
+  <meta name="keywords" content="Data visualization,Vision,Software tools,Software design,Radii,Eye movements,Research design,Seismic signal processing" />
+
+
+<meta name="citation_doi" content="10.1371/journal.pcbi.1003833"/>
+<meta name="citation_author" content="Nicolas P. Rougier"/>
+  <meta name="citation_author_institution" content="INRIA Bordeaux Sud-Ouest, Talence, France"/>
+  <meta name="citation_author_institution" content="LaBRI, UMR 5800 CNRS, Talence, France"/>
+  <meta name="citation_author_institution" content="Institute of Neurodegenerative Diseases, UMR 5293 CNRS, Bordeaux, France"/>
+<meta name="citation_author" content="Michael Droettboom"/>
+  <meta name="citation_author_institution" content="Space Telescope Science Institute, Baltimore, Maryland, United States of America"/>
+<meta name="citation_author" content="Philip E. Bourne"/>
+  <meta name="citation_author_institution" content="Office of the Director, The National Institutes of Health, Bethesda, Maryland, United States of America"/>
+
+<meta name="citation_title" content="Ten Simple Rules for Better Figures"/>
+<meta itemprop="name" content="Ten Simple Rules for Better Figures"/>
+<meta name="citation_journal_title" content="PLOS Computational Biology"/>
+<meta name="citation_journal_abbrev" content="PLOS Computational Biology"/>
+<meta name="citation_date" content="2014-9-11"/>
+<meta name="citation_firstpage" content="e1003833"/>
+<meta name="citation_issue" content="9"/>
+<meta name="citation_volume" content="10"/>
+<meta name="citation_issn" content="1553-7358"/>
+<meta name="citation_publisher" content="Public Library of Science"/>
+
+  <meta name="citation_pdf_url" content="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003833&type=printable">
+
+  <meta name="citation_article_type" content="Editorial">
+
+<meta name="dc.identifier" content="10.1371/journal.pcbi.1003833" />
+
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ploscompbiol"/>
+    <meta name="twitter:title" content="Ten Simple Rules for Better Figures" />
+    <meta property="twitter:image" content="https://journals.plos.org/ploscompbiol/article/figure/image?id=10.1371/journal.pcbi.1003833.g008&size=inline" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833"/>
+<meta property="og:title" content="Ten Simple Rules for Better Figures"/>
+<meta property="og:image" content="https://journals.plos.org/ploscompbiol/article/figure/image?id=10.1371/journal.pcbi.1003833.g008&size=inline"/>
+
+
+<meta name="citation_reference" content="Tufte EG (1983) The Visual Display of Quantitative Information. Cheshire, Connecticut: Graphics Press."/>
+
+<meta name="citation_reference" content="Doumont JL (2009) Trees, maps, and theorems. Brussels: Principiae."/>
+<meta name="citation_reference" content="citation_title=Storytelling: The next step for visualization;citation_author=R Kosara;citation_author=J Mackinlay;citation_journal_title=IEEE Comput;citation_volume=46;citation_number=46;citation_first_page=44;citation_last_page=50;citation_publication_date=2013;"/>    
+
+<meta name="citation_reference" content="Rougier NP (2012) Scientific visualization and matplotlib tutorial. Euroscipy 2012 &amp;amp; 2013. Available:  http://www.loria.fr/~rougier/teaching/matplotlib/matplotlib.html . Accessed 12 August 2014."/>
+<meta name="citation_reference" content="citation_title=Rainbow color map (still) considered harmful;citation_author=D Borland;citation_author=RM Taylor;citation_journal_title=IEEE Comput Graph Appl;citation_volume=27;citation_number=27;citation_first_page=14;citation_last_page=17;citation_publication_date=2007;"/>    
+
+<meta name="citation_reference" content="Okabe M, Ito K (2008). Color universal design (cud) - how to make figures and presentations that are friendly to colorblind people. Available:  http://jfly.iam.u-tokyo.ac.jp/color/ . Accessed 12 August 2014."/>
+
+<meta name="citation_reference" content="Few S (2011) The chartjunk debate, a close examination of recent findings. Visual Business Intelligence Newsletter. Available:  http://www.perceptualedge.com/articles/visual_business_intelligence/the_chartjunk_debate.pdf . Accessed 12 August 2014."/>
+
+<meta name="citation_reference" content="Fung K (2005). Junk charts: Recycling chartjunk as junk art. Available:  http://junkcharts.typepad.com . Accessed 12 August 2014."/>
+<meta name="citation_reference" content="citation_title=What makes a visualization memorable?;citation_author=MA Borkin;citation_author=AA Vo;citation_author=Z Bylinskii;citation_author=P Isola;citation_author=S Sunkavalli;citation_journal_title=IEEE Trans Vis Comput Graph;citation_volume=19;citation_number=19;citation_first_page=2306;citation_last_page=2315;citation_publication_date=2013;"/>    
+
+<meta name="citation_reference" content="Schumann J, Strothotte T, Raab A, Laser S (1996) Assessing the effect of non-photorealistic rendered images in cad. In: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems; 13–18 April 1996; New York, New York, United States. CHI 96. New York: Association for Computing Machinery. pp.35–41."/>
+
+
+<!-- DoubleClick overall ad setup script -->
+<script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<!-- DoubleClick ad slot setup script -->
+
+  <script id="doubleClickSetupScript" type='text/javascript'>
+    googletag.cmd.push(function() {
+  googletag.defineSlot('/75507958/PCOMPBIO_728x90_ATF', [728, 90], 'div-gpt-ad-1458247671871-0').addService(googletag.pubads());
+  googletag.defineSlot('/75507958/PCOMPBIO_160x600_BTF', [160, 600], 'div-gpt-ad-1458247671871-1').addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+  </script>
+
+
+
+<script type="text/javascript">
+    var WombatConfig = WombatConfig || {};
+    WombatConfig.resourcePath = "/ploscompbiol/resource/";
+    WombatConfig.imgPath = "/ploscompbiol/resource/img/";
+    WombatConfig.journalKey = "PLoSCompBiol";
+    WombatConfig.figurePath = "/ploscompbiol/article/figure/image";
+    WombatConfig.figShareInstitutionString = "plos";
+    WombatConfig.doiResolverPrefix = "http://dx.plos.org/";
+</script>
+
+<script type="text/javascript">
+  var WombatConfig = WombatConfig || {};
+  WombatConfig.metrics = WombatConfig.metrics || {};
+  WombatConfig.metrics.referenceUrl      = "http://lagotto.io/plos";
+  WombatConfig.metrics.googleScholarUrl  = "https://scholar.google.com/scholar";
+  WombatConfig.metrics.googleScholarCitationUrl  = WombatConfig.metrics.googleScholarUrl + "?hl=en&lr=&q=";
+  WombatConfig.metrics.crossrefUrl  = "https://www.crossref.org";
+</script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+<script>window.jQuery || document.write('<script src="/ploscompbiol/resource/js/vendor/jquery-2.1.4.min.js""><\/script>')</script>
+
+          <script type="text/javascript" src="https://widgets.figshare.com/static/figshare.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!--For Google Tag manager to be able to track site information  -->
+<script>
+
+  dataLayer = [{
+    'mobileSite': 'false',
+    'desktopSite': 'true'
+  }];
+
+</script>
+
+</head>
+
+
+
+<body class="article ploscompbiol">
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TP26BH"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TP26BH');</script>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MQQMGF"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MQQMGF');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<header>
+
+  <div id="topslot" class="head-top">
+
+<div class="center">
+<div class="title">Advertisement</div>
+<!-- DoubleClick Ad Zone -->
+  <div class='advertisement' id='div-gpt-ad-1458247671871-0' style='width:728px; height:90px;'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1458247671871-0'); });
+    </script>
+  </div>
+</div>
+  </div>
+
+  <div id="user" class="nav">
+    <ul class="nav-user">
+
+
+
+
+      <li ><a href="https://www.plos.org">plos.org</a></li>
+
+
+        <li ><a href="https://community.plos.org/registration/new">create account</a></li>
+
+
+          <li class="highlighted"><a href="/ploscompbiol/user/secure/login?page=%2Fploscompbiol%2Farticle%3Fid%3D10.1371%2Fjournal.pcbi.1003833">sign in</a></li>
+
+    </ul>
+  </div>
+  <div id="pagehdr">
+
+    <nav class="nav-main">
+
+
+
+
+<h1 class="logo">
+  <a href="/ploscompbiol/.">PLOS Computational Biology</a>
+</h1>
+
+<section class="top-bar-section"> 
+
+<ul class="nav-elements">
+
+
+
+  <li class="menu-section-header has-dropdown " id="browse">
+    <span class="menu-section-header-title">  Browse </span>
+
+    <ul class="menu-section dropdown "
+        id="browse-dropdown-list">
+      <li>
+    <a href="/ploscompbiol/issue" >Current Issue</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/volume" >Journal Archive</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/collections" >Collections</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/find-and-read-articles" >Find and Read Articles</a>
+  </li>
+
+    </ul>
+
+  </li>
+
+
+    <li class="multi-col-parent menu-section-header has-dropdown" id="publish">
+    Publish
+      <div class="dropdown mega ">
+        <ul class="multi-col" id="publish-dropdown-list">
+
+  <li class="menu-section-header " id="submissions">
+    <span class="menu-section-header-title">  Submissions </span>
+
+    <ul class="menu-section "
+        id="submissions-dropdown-list">
+      <li>
+    <a href="/ploscompbiol/s/getting-started" >Getting Started</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/presubmission-inquiries" >Presubmission Inquiries</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/submission-guidelines" >Submission Guidelines</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/figures" >Figures</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/tables" >Tables</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/supporting-information" >Supporting Information</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/latex" >LaTeX</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/other-article-types" >Other Article Types</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/preprints" >Preprints</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/revising-your-manuscript" >Revising Your Manuscript</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/submit-now" >Submit Now</a>
+  </li>
+
+    </ul>
+
+  </li>
+
+
+  <li class="menu-section-header " id="policies">
+    <span class="menu-section-header-title">  Policies </span>
+
+    <ul class="menu-section "
+        id="policies-dropdown-list">
+      <li>
+    <a href="/ploscompbiol/s/best-practices-in-research-reporting" >Best Practices in Research Reporting</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/human-subjects-research" >Human Subjects Research</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/animal-research" >Animal Research</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/competing-interests" >Competing Interests</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/disclosure-of-funding-sources" >Disclosure of Funding Sources</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/licenses-and-copyright" >Licenses and Copyright</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/data-availability" >Data Availability</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/materials-and-software-sharing" >Materials and Software Sharing</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/ethical-publishing-practice" >Ethical Publishing Practice</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/authorship" >Authorship</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/downloads-and-translations" >Downloads and Translations</a>
+  </li>
+
+    </ul>
+
+  </li>
+
+
+  <li class="menu-section-header " id="manuscript-review-and-publication">
+    <span class="menu-section-header-title">  Manuscript Review and Publication </span>
+
+    <ul class="menu-section "
+        id="manuscript-review-and-publication-dropdown-list">
+      <li>
+    <a href="/ploscompbiol/s/editorial-and-peer-review-process" >Editorial and Peer Review Process</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/reviewer-guidelines" >Guidelines for Reviewers</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/guidelines-for-editors" >Guidelines for Editors</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/accepted-manuscripts" >Accepted Manuscripts</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/corrections-and-retractions" >Corrections and Retractions</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/comments" >Comments</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/article-level-metrics" >Article-Level Metrics</a>
+  </li>
+
+    </ul>
+
+  </li>
+        </ul>
+      </div>
+    </li>
+
+
+
+  <li class="menu-section-header has-dropdown " id="about">
+    <span class="menu-section-header-title">  About </span>
+
+    <ul class="menu-section dropdown "
+        id="about-dropdown-list">
+      <li>
+    <a href="/ploscompbiol/s/journal-information" >Journal Information</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/editors-in-chief" >Editors-in-Chief</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/editorial-board" >Editorial Board</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/publishing-information" >Publishing Information</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/publication-fees" >Publication Fees</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/press-and-media" >Press and Media</a>
+  </li>
+
+      <li>
+    <a href="/ploscompbiol/s/contact" >Contact</a>
+  </li>
+
+    </ul>
+
+  </li>
+
+
+      <li id="navsearch" class="head-search">
+
+
+    <form name="searchForm" action="/ploscompbiol/search" method="get">
+      <fieldset>
+        <legend>Search</legend>
+        <label for="search">Search</label>
+        <div class="search-contain">
+          <input id="search" type="text" name="q" placeholder="Search" required/>
+          <button id="headerSearchButton" type="submit"><span class="search-icon"></span></button>
+        </div>
+      </fieldset>
+      <input type="hidden" name="filterJournals" value="PLoSCompBiol"/>
+    </form>
+
+    <a id="advSearch"
+       href="/ploscompbiol/search">
+      advanced search
+    </a>
+
+
+
+
+      </li>
+
+      </ul>     
+      </section>  
+    </nav>
+  </div>
+
+</header><main> <div class="set-grid">
+
+<header class="title-block">
+
+
+
+<script type="text/javascript">
+  var COUNTER_HOST = "https://counter.plos.org/api/v1.0/stats/totals/doi";
+</script>
+
+<script type="text/javascript">
+  var ALM_CONFIG = ALM_CONFIG || {};
+  ALM_CONFIG.hostname = "https://alm.plos.org";
+  ALM_CONFIG.apiKey = "3pezRBRXdyzYW6ztfwft";
+  ALM_CONFIG.host = "https://alm.plos.org/api/v5/articles";
+</script>
+
+<ul id="almSignposts" class="signposts">
+  <li id="loadingMetrics">
+    <p>Loading metrics</p>
+  </li>
+</ul>
+
+<script type="text/template" id="signpostsGeneralErrorTemplate">
+  <li id="metricsError">Article metrics are unavailable at this time. Please try again later.</li>
+</script>
+
+<script type="text/template" id="signpostsNewArticleErrorTemplate">
+  <li></li><li></li><li id="tooSoon">Article metrics are unavailable for recently published articles.</li>
+</script>
+
+<script type="text/template" id="signpostsTemplate">
+    <li id="almSaves">
+      <%= s.numberFormat(saveCount, 0) %>
+      <div class="tools" data-js-tooltip-hover="trigger">
+        <a class="metric-term" href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#savedHeader">Save</a>
+        <p class="saves-tip" data-js-tooltip-hover="target"><a href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#savedHeader">Total Mendeley and CiteULike bookmarks.</a></p>
+      </div>
+    </li>
+
+    <li id="almCitations">
+      <%= s.numberFormat(citationCount, 0) %>
+      <div class="tools" data-js-tooltip-hover="trigger">
+        <a class="metric-term" href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#citedHeader">Citation</a>
+        <p class="citations-tip" data-js-tooltip-hover="target"><a href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#citedHeader">Paper's citation count computed by Scopus.</a></p>
+      </div>
+    </li>
+
+    <li id="almViews">
+      <%= s.numberFormat(viewCount, 0) %>
+      <div class="tools" data-js-tooltip-hover="trigger">
+        <a class="metric-term" href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#viewedHeader">View</a>
+        <p class="views-tip" data-js-tooltip-hover="target"><a href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#viewedHeader">Sum of PLOS and PubMed Central page views and downloads.</a></p>
+      </div>
+    </li>
+
+    <li id="almShares">
+      <%= s.numberFormat(shareCount, 0) %>
+      <div class="tools" data-js-tooltip-hover="trigger">
+        <a class="metric-term" href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#discussedHeader">Share</a>
+        <p class="shares-tip" data-js-tooltip-hover="target"><a href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833#discussedHeader">Sum of Facebook and Twitter activity.</a></p>
+      </div>
+    </li>
+</script>
+
+    <div class="article-meta">
+
+<div class="classifications">
+  <p class="license-short" id="licenseShort">Open Access</p>
+
+<div class="article-type" >
+  <p class="article-type-tooltip" id="artType">Editorial</p>
+</div>
+
+
+</div>
+
+
+    </div>
+    <div class="article-title-etc">
+
+
+
+<div class="title-authors">
+  <h1 id="artTitle"><?xml version="1.0" encoding="UTF-8"?>Ten Simple Rules for Better Figures</h1>
+
+<ul class="author-list clearfix"  data-js-tooltip="tooltip_container" id="author-list">
+
+
+
+<li
+  data-js-tooltip="tooltip_trigger"
+  
+>
+   <a  data-author-id="0" class="author-name" >
+Nicolas P. Rougier <span class="email">  </span>,</a>    <div id="author-meta-0" class="author-info" data-js-tooltip="tooltip_target">
+
+  
+  <p id="authCorresponding-0"> <span class="email">* E-mail:</span> <a href="mailto:Nicolas.Rougier@inria.fr">Nicolas.Rougier@inria.fr</a></p>
+  <p id="authAffiliations-0"><span class="type">Affiliations</span>
+    INRIA Bordeaux Sud-Ouest, Talence, France, 
+    LaBRI, UMR 5800 CNRS, Talence, France, 
+    Institute of Neurodegenerative Diseases, UMR 5293 CNRS, Bordeaux, France
+  </p>
+
+      <a data-js-tooltip="tooltip_close" class="close" id="tooltipClose0"> &#x02A2F; </a>
+    </div>
+</li>
+
+<li
+  data-js-tooltip="tooltip_trigger"
+  
+>
+   <a  data-author-id="1" class="author-name" >
+Michael Droettboom,</a>    <div id="author-meta-1" class="author-info" data-js-tooltip="tooltip_target">
+
+  
+  
+  <p id="authAffiliations-1"><span class="type">Affiliation</span>
+    Space Telescope Science Institute, Baltimore, Maryland, United States of America
+  </p>
+
+      <a data-js-tooltip="tooltip_close" class="close" id="tooltipClose1"> &#x02A2F; </a>
+    </div>
+</li>
+
+<li
+  data-js-tooltip="tooltip_trigger"
+  
+>
+   <a  data-author-id="2" class="author-name" >
+Philip E. Bourne</a>    <div id="author-meta-2" class="author-info" data-js-tooltip="tooltip_target">
+
+  
+  
+  <p id="authAffiliations-2"><span class="type">Affiliation</span>
+    Office of the Director, The National Institutes of Health, Bethesda, Maryland, United States of America
+  </p>
+
+      <a data-js-tooltip="tooltip_close" class="close" id="tooltipClose2"> &#x02A2F; </a>
+    </div>
+</li>
+
+</ul>
+
+</div>
+
+
+<div id="floatTitleTop" data-js-floater="title_author" class="float-title">
+  <div class="set-grid">
+    <div class="float-title-inner">
+      <h1><?xml version="1.0" encoding="UTF-8"?>Ten Simple Rules for Better Figures</h1>
+
+<ul id="floatAuthorList" data-js-floater="floated_authors">
+
+  <li data-float-index="1">Nicolas P. Rougier,&nbsp;
+
+  </li>
+  <li data-float-index="2">Michael Droettboom,&nbsp;
+
+  </li>
+  <li data-float-index="3">Philip E. Bourne
+
+  </li>
+
+</ul>
+
+
+
+    </div>
+    <div class="logo-close" id="titleTopCloser">
+      <img src="/ploscompbiol/resource/img/logo.plos.95.png" alt="PLOS" />
+      <div class="close-floater" title="close">x</div>
+    </div>
+  </div>
+</div>
+
+      <ul class="date-doi">
+        <li id="artPubDate">Published: September 11, 2014</li>
+        <li id="artDoi">
+<a   href="https://doi.org/10.1371/journal.pcbi.1003833">https://doi.org/10.1371/journal.pcbi.1003833</a>
+        </li>
+      </ul>
+
+    </div>
+  <div>
+
+  </div>
+</header>
+
+  <section class="article-body">
+
+
+
+<ul class="article-tabs">
+
+        <li class="tab-title active" id="tabArticle">
+          <a href="/ploscompbiol/article?id=10.1371/journal.pcbi.1003833" class="article-tab-1">Article</a>
+      </li>
+
+
+            <li class="tab-title " id="tabAuthors">
+          <a href="/ploscompbiol/article/authors?id=10.1371/journal.pcbi.1003833" class="article-tab-2">Authors</a>
+      </li>
+
+
+        <li class="tab-title " id="tabMetrics">
+          <a href="/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1003833" class="article-tab-3">Metrics</a>
+      </li>
+
+        <li class="tab-title " id="tabComments">
+          <a href="/ploscompbiol/article/comments?id=10.1371/journal.pcbi.1003833" class="article-tab-4">Comments</a>
+      </li>
+
+        <li class="tab-title " id="tabRelated">
+          <a href="/ploscompbiol/article/related?id=10.1371/journal.pcbi.1003833" class="article-tab-5">Related Content</a>
+      </li>
+
+</ul>
+
+    <div class="article-container">
+
+
+<div id="nav-article">
+  <ul class="nav-secondary">
+
+    <li class="nav-comments" id="nav-comments">
+      <a href="article/comments?id=10.1371/journal.pcbi.1003833">Reader Comments (3)</a>
+    </li>
+
+    <li class="nav-media" id="nav-media" data-doi="10.1371/journal.pcbi.1003833">
+      <a href="/ploscompbiol/article/related?id=10.1371/journal.pcbi.1003833">
+        Media Coverage <span id="media-coverage-count"></span>
+      </a>
+    </li>
+
+    <li id="nav-figures"><a href="#" data-doi="10.1371/journal.pcbi.1003833">Figures</a></li>
+  </ul>
+</div>
+
+<div id="figure-lightbox-container"></div>
+
+<script id="figure-lightbox-template" type="text/template">
+  <div id="figure-lightbox" class="reveal-modal full" data-reveal aria-hidden="true"
+       role="dialog">
+    <div class="lb-header">
+      <h1 id="lb-title"><%= articleTitle %></h1>
+
+      <div id="lb-authors">
+            <span>Nicolas P. Rougier</span>
+            <span>Michael Droettboom</span>
+            <span>Philip E. Bourne</span>
+      </div>
+
+      <div class="lb-close" title="close">&nbsp;</div>
+    </div>
+    <div class="img-container">
+      <div class="loader"> <i class="fa-spinner"></i> </div>
+      <img class="main-lightbox-image" src=""/>
+      <aside id="figures-list">
+        <% figureList.each(function (ix, figure) { %>
+        <div class="change-img" data-doi="<%= figure.getAttribute('data-doi') %>">
+          <img class="aside-figure" src="/ploscompbiol/article/figure/image?size=inline&id=<%= figure.getAttribute('data-doi') %>" />
+        </div>
+        <% }) %>
+        <div class="dummy-figure">
+        </div>
+      </aside>
+    </div>
+    <div id="lightbox-footer">
+
+      <div id="btns-container" class="lightbox-row <% if(figureList.length <= 1) { print('one-figure-only') } %>">
+        <div class="fig-btns-container reset-zoom-wrapper left">
+          <span class="fig-btn reset-zoom-btn">Reset zoom</span>
+        </div>
+        <div class="zoom-slider-container">
+          <div class="range-slider-container">
+            <span id="lb-zoom-min"></span>
+            <div class="range-slider round" data-slider data-options="start: 20; end: 200; initial: 20;">
+              <span class="range-slider-handle" role="slider" tabindex="0"></span>
+              <span class="range-slider-active-segment"></span>
+              <input type="hidden">
+            </div>
+            <span id="lb-zoom-max"></span>
+          </div>
+        </div>
+        <% if(figureList.length > 1) { %>
+        <div class="fig-btns-container">
+          <span class="fig-btn all-fig-btn"><i class="icon icon-all"></i> All Figures</span>
+          <span class="fig-btn next-fig-btn"><i class="icon icon-next"></i> Next</span>
+          <span class="fig-btn prev-fig-btn"><i class="icon icon-prev"></i> Previous</span>
+        </div>
+        <% } %>
+      </div>
+      <div id="image-context">
+      </div>
+    </div>
+  </div>
+</script>
+
+<script id="image-context-template" type="text/template">
+  <div class="footer-text">
+    <div id="figure-description-wrapper">
+      <div id="view-more-wrapper" style="<% descriptionExpanded? print('display:none;') : '' %>">
+        <span id="figure-title"><%= title %></span>
+        <p id="figure-description">
+          <%= description %>&nbsp;&nbsp;
+        </p>
+        <span id="view-more">show more<i class="icon-arrow-right"></i></span>
+
+      </div>
+      <div id="view-less-wrapper" style="<% descriptionExpanded? print('display:inline-block;') : '' %>" >
+        <span id="figure-title"><%= title %></span>
+        <p id="full-figure-description">
+          <%= description %>&nbsp;&nbsp;
+          <span id="view-less">show less<i class="icon-arrow-left"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="show-context-container">
+    <a class="btn show-context" href="<%= showInContext(strippedDoi) %>">Show in Context</a>
+  </div>
+  <div id="download-buttons">
+    <h3>Download:</h3>
+    <div class="item">
+      <a href="/ploscompbiol/article/figure/image?size=original&download=&id=<%= doi %>" title="original image">
+        <span class="download-btn">TIFF</span>
+      </a>
+      <span class="file-size"><%= fileSizes.original %></span>
+    </div>
+    <div class="item">
+      <a href="/ploscompbiol/article/figure/image?size=large&download=&id=<%= doi %>" title="large image">
+        <span class="download-btn">PNG</span>
+      </a>
+      <span class="file-size"><%= fileSizes.large %></span>
+    </div>
+    <div class="item">
+      <a href="/ploscompbiol/article/figure/powerpoint?id=<%= doi %>" title="PowerPoint slide">
+        <span class="download-btn">PPT</span>
+      </a>
+    </div>
+
+  </div>
+</script>
+      <div class="article-content">
+
+
+
+
+
+
+
+
+<div id="figure-carousel-section">
+  <h2>Figures</h2>
+
+  <div id="figure-carousel">
+
+    <div class="carousel-wrapper">
+      <div class="slider">
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g001">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g001"
+                     alt="Figure 1"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g002">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g002"
+                     alt="Figure 2"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g003">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g003"
+                     alt="Figure 3"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g004">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g004"
+                     alt="Figure 4"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g005">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g005"
+                     alt="Figure 5"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g006">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g006"
+                     alt="Figure 6"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g007">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g007"
+                     alt="Figure 7"
+                />
+
+            </div>
+
+          <div class="carousel-item lightbox-figure" data-doi="10.1371/journal.pcbi.1003833.g008">
+
+                <img src="/ploscompbiol/article/figure/image?size=inline&amp;id=10.1371/journal.pcbi.1003833.g008"
+                     alt="Figure 8"
+                />
+
+            </div>
+      </div>
+    </div>
+
+    <div class="carousel-control">
+      <span class="button previous"></span>
+      <span class="button next"></span>
+    </div>
+    <div class="carousel-page-buttons">
+
+    </div>
+  </div>
+</div>
+
+
+        <div class="article-text" id="artText">
+        
+
+
+
+
+
+
+<div class="articleinfo"><p><strong>Citation: </strong>Rougier NP, Droettboom M, Bourne PE (2014) Ten Simple Rules for Better Figures. PLoS Comput Biol 10(9):
+           e1003833.
+        
+        https://doi.org/10.1371/journal.pcbi.1003833</p><p><strong>Published: </strong> September 11, 2014</p><p>This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.</p><p><strong>Funding: </strong>The authors received no specific funding for this article.</p><p><strong>Competing interests: </strong> The authors have declared that no competing interests exist.</p></div>
+
+
+
+
+
+<div id="section1" class="section toc-section"><a id="article1.body1.sec1.p1" name="article1.body1.sec1.p1" class="link-target"></a><p>Scientific visualization is classically defined as the process of graphically displaying scientific data. However, this process is far from direct or automatic. There are so many different ways to represent the same data: scatter plots, linear plots, bar plots, and pie charts, to name just a few. Furthermore, the same data, using the same type of plot, may be perceived very differently depending on who is looking at the figure. A more accurate definition for scientific visualization would be a graphical interface between people and data. In this short article, we do not pretend to explain everything about this interface; rather, see <a href="#pcbi.1003833-Tufte1" class="ref-tip">[1]</a>, <a href="#pcbi.1003833-Doumont1" class="ref-tip">[2]</a> for introductory work. Instead we aim to provide a basic set of rules to improve figure design and to explain some of the common pitfalls.</p>
+</div>
+
+<div id="section2" class="section toc-section"><a id="s2" name="s2" data-toc="s2" class="link-target" title="Rule 1: Know Your Audience"></a><h2>Rule 1: Know Your Audience</h2><a id="article1.body1.sec2.p1" name="article1.body1.sec2.p1" class="link-target"></a><p>Given the definition above, problems arise when how a visual is perceived differs significantly from the intent of the conveyer. Consequently, it is important to identify, as early as possible in the design process, the audience and the message the visual is to convey. The graphical design of the visual should be informed by this intent. If you are making a figure for yourself and your direct collaborators, you can possibly skip a number of steps in the design process, because each of you knows what the figure is about. However, if you intend to publish a figure in a scientific journal, you should make sure your figure is correct and conveys all the relevant information to a broader audience. Student audiences require special care since the goal for that situation is to explain a concept. In that case, you may have to add extra information to make sure the concept is fully understood. Finally, the general public may be the most difficult audience of all since you need to design a simple, possibly approximated, figure that reveals only the most salient part of your research (<a href="#pcbi-1003833-g001">Figure 1</a>). This has proven to be a difficult exercise <a href="#pcbi.1003833-Kosara1" class="ref-tip">[3]</a>.</p>
+<a class="link-target" id="pcbi-1003833-g001" name="pcbi-1003833-g001"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g001"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g001" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g001"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g001" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g001">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g001">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g001">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g001">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g001">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g001">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 1. </span> Know your audience.</div><p class="caption_target"><a id="article1.body1.sec2.fig1.caption1.p1" name="article1.body1.sec2.fig1.caption1.p1" class="link-target"></a><p>This is a remake of a figure that was originally published in the New York Times (NYT) in 2007. This new figure was made with matplotlib using approximated data. The data is made of four series (men deaths/cases, women deaths/cases) that could have been displayed using classical double column (deaths/cases) bar plots. However, the layout used here is better for the intended audience. It exploits the fact that the number of new cases is always greater than the corresponding number of deaths to mix the two values. It also takes advantage of the reading direction (English [left-to-right] for NYT) in order to ease comparison between men and women while the central labels give an immediate access to the main message of the figure (cancer). This is a self-contained figure that delivers a clear message on cancer deaths. However, it is not precise. The chosen layout makes it actually difficult to estimate the number of kidney cancer deaths because of its bottom position and the location of the labelled ticks at the top. While this is acceptable for a general-audience publication, it would not be acceptable in a scientific publication if actual numerical values were not given elsewhere in the article.</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g001">
+              https://doi.org/10.1371/journal.pcbi.1003833.g001</a></p></div></div>
+
+<div id="section3" class="section toc-section"><a id="s3" name="s3" data-toc="s3" class="link-target" title="Rule 2: Identify Your Message"></a><h2>Rule 2: Identify Your Message</h2><a id="article1.body1.sec3.p1" name="article1.body1.sec3.p1" class="link-target"></a><p>A figure is meant to express an idea or introduce some facts or a result that would be too long (or nearly impossible) to explain only with words, be it for an article or during a time-limited oral presentation. In this context, it is important to clearly identify the role of the figure, i.e., what is the underlying message and how can a figure best express this message? Once clearly identified, this message will be a strong guide for the design of the figure, as shown in <a href="#pcbi-1003833-g002">Figure 2</a>. Only after identifying the message will it be worth the time to develop your figure, just as you would take the time to craft your words and sentences when writing an article only after deciding on the main points of the text. If your figure is able to convey a striking message at first glance, chances are increased that your article will draw more attention from the community.</p>
+<a class="link-target" id="pcbi-1003833-g002" name="pcbi-1003833-g002"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g002"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g002" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g002"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g002" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g002">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g002">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g002">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g002">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g002">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g002">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 2. </span> Identify your message.</div><p class="caption_target"><a id="article1.body1.sec3.fig1.caption1.p1" name="article1.body1.sec3.fig1.caption1.p1" class="link-target"></a><p>The superior colliculus (SC) is a brainstem structure at the crossroads of multiple functional pathways. Several neurophysiological studies suggest that the population of active neurons in the SC encodes the location of a visual target that induces saccadic eye movement. The projection from the retina surface (on the left) to the collicular surface (on the right) is based on a standard and quantitative model in which a logarithmic mapping function ensures the projection from retinal coordinates to collicular coordinates. This logarithmic mapping plays a major role in saccade decision. To better illustrate this role, an artificial checkerboard pattern has been used, even though such a pattern is not used during experiments. This checkerboard pattern clearly demonstrates the extreme magnification of the foveal region, which is the main message of the figure.</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g002">
+              https://doi.org/10.1371/journal.pcbi.1003833.g002</a></p></div></div>
+
+<div id="section4" class="section toc-section"><a id="s4" name="s4" data-toc="s4" class="link-target" title="Rule 3: Adapt the Figure to the Support Medium"></a><h2>Rule 3: Adapt the Figure to the Support Medium</h2><a id="article1.body1.sec4.p1" name="article1.body1.sec4.p1" class="link-target"></a><p>A figure can be displayed on a variety of media, such as a poster, a computer monitor, a projection screen (as in an oral presentation), or a simple sheet of paper (as in a printed article). Each of these media represents different physical sizes for the figure, but more importantly, each of them also implies different ways of viewing and interacting with the figure. For example, during an oral presentation, a figure will be displayed for a limited time. Thus, the viewer must quickly understand what is displayed and what it represents while still listening to your explanation. In such a situation, the figure must be kept simple and the message must be visually salient in order to grab attention, as shown in <a href="#pcbi-1003833-g003">Figure 3</a>. It is also important to keep in mind that during oral presentations, figures will be video-projected and will be seen from a distance, and figure elements must consequently be made thicker (lines) or bigger (points, text), colors should have strong contrast, and vertical text should be avoided, etc. For a journal article, the situation is totally different, because the reader is able to view the figure as long as necessary. This means a lot of details can be added, along with complementary explanations in the caption. If we take into account the fact that more and more people now read articles on computer screens, they also have the possibility to zoom and drag the figure. Ideally, each type of support medium requires a different figure, and you should abandon the practice of extracting a figure from your article to be put, as is, in your oral presentation.</p>
+<a class="link-target" id="pcbi-1003833-g003" name="pcbi-1003833-g003"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g003"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g003" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g003"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g003" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g003">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g003">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g003">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g003">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g003">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g003">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 3. </span> Adapt the figure to the support medium.</div><p class="caption_target"><a id="article1.body1.sec4.fig1.caption1.p1" name="article1.body1.sec4.fig1.caption1.p1" class="link-target"></a><p>These two figures represent the same simulation of the trajectories of a dual-particle system (<span class="inline-formula"><img src="article/file?type=thumbnail&amp;id=info:doi/10.1371/journal.pcbi.1003833.e001" class="inline-graphic"></span>, <span class="inline-formula"><img src="article/file?type=thumbnail&amp;id=info:doi/10.1371/journal.pcbi.1003833.e002" class="inline-graphic"></span>, <span class="inline-formula"><img src="article/file?type=thumbnail&amp;id=info:doi/10.1371/journal.pcbi.1003833.e003" class="inline-graphic"></span>, <span class="inline-formula"><img src="article/file?type=thumbnail&amp;id=info:doi/10.1371/journal.pcbi.1003833.e004" class="inline-graphic"></span>) where each particle interacts with the other. Depending on the initial conditions, the system may end up in three different states. The left figure has been prepared for a journal article where the reader is free to look at every detail. The red color has been used consistently to indicate both initial conditions (red dots in the zoomed panel) and trajectories (red lines). Line transparency has been increased in order to highlight regions where trajectories overlap (high color density). The right figure has been prepared for an oral presentation. Many details have been removed (reduced number of trajectories, no overlapping trajectories, reduced number of ticks, bigger axis and tick labels, no title, thicker lines) because the time-limited display of this figure would not allow for the audience to scrutinize every detail. Furthermore, since the figure will be described during the oral presentation, some parts have been modified to make them easier to reference (e.g., the yellow box, the red dashed line).</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g003">
+              https://doi.org/10.1371/journal.pcbi.1003833.g003</a></p></div></div>
+
+<div id="section5" class="section toc-section"><a id="s5" name="s5" data-toc="s5" class="link-target" title="Rule 4: Captions Are Not Optional"></a><h2>Rule 4: Captions Are Not Optional</h2><a id="article1.body1.sec5.p1" name="article1.body1.sec5.p1" class="link-target"></a><p>Whether describing an experimental setup, introducing a new model, or presenting new results, you cannot explain everything within the figure itself—a figure should be accompanied by a caption. The caption explains how to read the figure and provides additional precision for what cannot be graphically represented. This can be thought of as the explanation you would give during an oral presentation, or in front of a poster, but with the difference that you must think in advance about the questions people would ask. For example, if you have a bar plot, do not expect the reader to guess the value of the different bars by just looking and measuring relative heights on the figure. If the numeric values are important, they must be provided elsewhere in your article or be written very clearly on the figure. Similarly, if there is a point of interest in the figure (critical domain, specific point, etc.), make sure it is visually distinct but do not hesitate to point it out again in the caption.</p>
+</div>
+
+<div id="section6" class="section toc-section"><a id="s6" name="s6" data-toc="s6" class="link-target" title="Rule 5: Do Not Trust the Defaults"></a><h2>Rule 5: Do Not Trust the Defaults</h2><a id="article1.body1.sec6.p1" name="article1.body1.sec6.p1" class="link-target"></a><p>Any plotting library or software comes with a set of default settings. When the end-user does not specify anything, these default settings are used to specify size, font, colors, styles, ticks, markers, etc. (<a href="#pcbi-1003833-g004">Figure 4</a>). Virtually any setting can be specified, and you can usually recognize the specific style of each software package (Matlab, Excel, Keynote, etc.) or library (LaTeX, matplotlib, gnuplot, etc.) thanks to the choice of these default settings. Since these settings are to be used for virtually any type of plot, they are not fine-tuned for a specific type of plot. In other words, they are good enough for any plot but they are best for none. All plots require at least some manual tuning of the different settings to better express the message, be it for making a precise plot more salient to a broad audience, or to choose the best colormap for the nature of the data. For example, see <a href="#pcbi.1003833-Rougier1" class="ref-tip">[4]</a> for how to go from the default settings to a nicer visual in the case of the matplotlib library.</p>
+<a class="link-target" id="pcbi-1003833-g004" name="pcbi-1003833-g004"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g004"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g004" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g004"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g004" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g004">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g004">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g004">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g004">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g004">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g004">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 4. </span> Do not trust the defaults.</div><p class="caption_target"><a id="article1.body1.sec6.fig1.caption1.p1" name="article1.body1.sec6.fig1.caption1.p1" class="link-target"></a><p>The left panel shows the sine and cosine functions as rendered by matplotlib using default settings. While this figure is clear enough, it can be visually improved by tweaking the various available settings, as shown on the right panel.</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g004">
+              https://doi.org/10.1371/journal.pcbi.1003833.g004</a></p></div></div>
+
+<div id="section7" class="section toc-section"><a id="s7" name="s7" data-toc="s7" class="link-target" title="Rule 6: Use Color Effectively"></a><h2>Rule 6: Use Color Effectively</h2><a id="article1.body1.sec7.p1" name="article1.body1.sec7.p1" class="link-target"></a><p>Color is an important dimension in human vision and is consequently equally important in the design of a scientific figure. However, as explained by Edward Tufte <a href="#pcbi.1003833-Tufte1" class="ref-tip">[1]</a>, color can be either your greatest ally or your worst enemy if not used properly. If you decide to use color, you should consider which colors to use and where to use them. For example, to highlight some element of a figure, you can use color for this element while keeping other elements gray or black. This provides an enhancing effect. However, if you have no such need, you need to ask yourself, “Is there any reason this plot is blue and not black?” If you don't know the answer, just keep it black. The same holds true for colormaps. Do not use the default colormap (e.g., jet or rainbow) unless there is an explicit reason to do so (see <a href="#pcbi-1003833-g005">Figure 5</a> and <a href="#pcbi.1003833-Borland1" class="ref-tip">[5]</a>). Colormaps are traditionally classified into three main categories:</p>
+<a class="link-target" id="pcbi-1003833-g005" name="pcbi-1003833-g005"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g005"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g005" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g005"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g005" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g005">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g005">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g005">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g005">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g005">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g005">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 5. </span> Use color effectively.</div><p class="caption_target"><a id="article1.body1.sec7.fig1.caption1.p1" name="article1.body1.sec7.fig1.caption1.p1" class="link-target"></a><p>This figure represents the same signal, whose frequency increases to the right and intensity increases towards the bottom, using three different colormaps. The rainbow colormap (qualitative) and the seismic colormap (diverging) are equally bad for such a signal because they tend to hide details in the high frequency domain (bottom-right part). Using a sequential colormap such as the purple one, it is easier to see details in the high frequency domain. Adapted from <a href="#pcbi.1003833-Borland1" class="ref-tip">[5]</a>.</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g005">
+              https://doi.org/10.1371/journal.pcbi.1003833.g005</a></p></div>
+
+<ul class="bulleted">
+
+<li><em>Sequential</em>: one variation of a unique color, used for quantitative data varying from low to high.</li>
+
+<li><em>Diverging</em>: variation from one color to another, used to highlight deviation from a median value.</li>
+
+<li><em>Qualitative</em>: rapid variation of colors, used mainly for discrete or categorical data.</li>
+
+</ul><a id="article1.body1.sec7.p2" name="article1.body1.sec7.p2" class="link-target"></a><p>Use the colormap that is the most relevant to your data. Lastly, avoid using too many similar colors since color blindness may make it difficult to discern some color differences (see <a href="#pcbi.1003833-Okabe1" class="ref-tip">[6]</a> for detailed explanation).</p>
+</div>
+
+<div id="section8" class="section toc-section"><a id="s8" name="s8" data-toc="s8" class="link-target" title="Rule 7: Do Not Mislead the Reader"></a><h2>Rule 7: Do Not Mislead the Reader</h2><a id="article1.body1.sec8.p1" name="article1.body1.sec8.p1" class="link-target"></a><p>What distinguishes a scientific figure from other graphical artwork is the presence of data that needs to be shown as objectively as possible. A scientific figure is, by definition, tied to the data (be it an experimental setup, a model, or some results) and if you loosen this tie, you may unintentionally project a different message than intended. However, representing results objectively is not always straightforward. For example, a number of implicit choices made by the library or software you're using that are meant to be accurate in most situations may also mislead the viewer under certain circumstances. If your software automatically re-scales values, you might obtain an objective representation of the data (because title, labels, and ticks indicate clearly what is actually displayed) that is nonetheless visually misleading (see bar plot in <a href="#pcbi-1003833-g006">Figure 6</a>); you have inadvertently misled your readers into visually believing something that does not exist in your data. You can also make explicit choices that are wrong by design, such as using pie charts or 3-D charts to compare quantities. These two kinds of plots are known to induce an incorrect perception of quantities and it requires some expertise to use them properly. As a rule of thumb, make sure to always use the simplest type of plots that can convey your message and make sure to use labels, ticks, title, and the full range of values when relevant. Lastly, do not hesitate to ask colleagues about their interpretation of your figures.</p>
+<a class="link-target" id="pcbi-1003833-g006" name="pcbi-1003833-g006"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g006"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g006" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g006"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g006" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g006">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g006">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g006">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g006">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g006">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g006">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 6. </span> Do not mislead the reader.</div><p class="caption_target"><a id="article1.body1.sec8.fig1.caption1.p1" name="article1.body1.sec8.fig1.caption1.p1" class="link-target"></a><p>On the left part of the figure, we represented a series of four values: 30, 20, 15, 10. On the upper left part, we used the disc area to represent the value, while in the bottom part we used the disc radius. Results are visually very different. In the latter case (red circles), the last value (10) appears very small compared to the first one (30), while the ratio between the two values is only 3∶1. This situation is actually very frequent in the literature because the command (or interface) used to produce circles or scatter plots (with varying point sizes) offers to use the radius as default to specify the disc size. It thus appears logical to use the value for the radius, but this is misleading. On the right part of the figure, we display a series of ten values using the full range for values on the top part (y axis goes from 0 to 100) or a partial range in the bottom part (y axis goes from 80 to 100), and we explicitly did not label the y-axis to enhance the confusion. The visual perception of the two series is totally different. In the top part (black series), we tend to interpret the values as very similar, while in the bottom part, we tend to believe there are significant differences. Even if we had used labels to indicate the actual range, the effect would persist because the bars are the most salient information on these figures.</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g006">
+              https://doi.org/10.1371/journal.pcbi.1003833.g006</a></p></div></div>
+
+<div id="section9" class="section toc-section"><a id="s9" name="s9" data-toc="s9" class="link-target" title="Rule 8: Avoid “Chartjunk”"></a><h2>Rule 8: Avoid “Chartjunk”</h2><a id="article1.body1.sec9.p1" name="article1.body1.sec9.p1" class="link-target"></a><p>Chartjunk refers to all the unnecessary or confusing visual elements found in a figure that do not improve the message (in the best case) or add confusion (in the worst case). For example, chartjunk may include the use of too many colors, too many labels, gratuitously colored backgrounds, useless grid lines, etc. (see left part of <a href="#pcbi-1003833-g007">Figure 7</a>). The term was first coined by Edward Tutfe in <a href="#pcbi.1003833-Tufte1" class="ref-tip">[1]</a>, in which he argues that any decorations that do not tell the viewer something new must be banned: “Regardless of the cause, it is all non-data-ink or redundant data-ink, and it is often chartjunk.” Thus, in order to avoid chartjunk, try to save ink, or electrons in the computing era. Stephen Few reminds us in <a href="#pcbi.1003833-Few1" class="ref-tip">[7]</a> that graphs should ideally “represent all the data that is needed to see and understand what's meaningful.” However, an element that could be considered chartjunk in one figure can be justified in another. For example, the use of a background color in a regular plot is generally a bad idea because it does not bring useful information. However, in the right part of <a href="#pcbi-1003833-g007">Figure 7</a>, we use a gray background box to indicate the range [−1,+1] as described in the caption. If you're in doubt, do not hesitate to consult the excellent blog of Kaiser Fung <a href="#pcbi.1003833-Fung1" class="ref-tip">[8]</a>, which explains quite clearly the concept of chartjunk through the study of many examples.</p>
+<a class="link-target" id="pcbi-1003833-g007" name="pcbi-1003833-g007"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g007"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g007" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g007"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g007" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g007">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g007">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g007">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g007">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g007">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g007">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 7. </span> Avoid chartjunk.</div><p class="caption_target"><a id="article1.body1.sec9.fig1.caption1.p1" name="article1.body1.sec9.fig1.caption1.p1" class="link-target"></a><p>We have seven series of samples that are equally important, and we would like to show them all in order to visually compare them (exact signal values are supposed to be given elsewhere). The left figure demonstrates what is certainly one of the worst possible designs. All the curves cover each other and the different colors (that have been badly and automatically chosen by the software) do not help to distinguish them. The legend box overlaps part of the graphic, making it impossible to check if there is any interesting information in this area. There are far too many ticks: x labels overlap each other, making them unreadable, and the three-digit precision does not seem to carry any significant information. Finally, the grid does not help because (among other criticisms) it is not aligned with the signal, which can be considered discrete given the small number of sample points. The right figure adopts a radically different layout while using the same area on the sheet of paper. Series have been split into seven plots, each of them showing one series, while other series are drawn very lightly behind the main one. Series labels have been put on the left of each plot, avoiding the use of colors and a legend box. The number of x ticks has been reduced to three, and a thin line indicates these three values for all plots. Finally, y ticks have been completely removed and the height of the gray background boxes indicate the [−1,+1] range (this should also be indicated in the figure caption if it were to be used in an article).</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g007">
+              https://doi.org/10.1371/journal.pcbi.1003833.g007</a></p></div></div>
+
+<div id="section10" class="section toc-section"><a id="s10" name="s10" data-toc="s10" class="link-target" title="Rule 9: Message Trumps Beauty"></a><h2>Rule 9: Message Trumps Beauty</h2><a id="article1.body1.sec10.p1" name="article1.body1.sec10.p1" class="link-target"></a><p>Figures have been used in scientific literature since antiquity. Over the years, a lot of progress has been made, and each scientific domain has developed its own set of best practices. It is important to know these standards, because they facilitate a more direct comparison between models, studies, or experiments. More importantly, they can help you to spot obvious errors in your results. However, most of the time, you may need to design a brand-new figure, because there is no standard way of describing your research. In such a case, browsing the scientific literature is a good starting point. If some article displays a stunning figure to introduce results similar to yours, you might want to try to adapt the figure for your own needs (note that we did not say copy; be careful with image copyright). If you turn to the web, you have to be very careful, because the frontiers between data visualization, infographics, design, and art are becoming thinner and thinner <a href="#pcbi.1003833-Borkin1" class="ref-tip">[9]</a>. There exists a myriad of online graphics in which aesthetic is the first criterion and content comes in second place. Even if a lot of those graphics might be considered beautiful, most of them do not fit the scientific framework. Remember, in science, message and readability of the figure is the most important aspect while beauty is only an option, as dramatically shown in <a href="#pcbi-1003833-g008">Figure 8</a>.</p>
+<a class="link-target" id="pcbi-1003833-g008" name="pcbi-1003833-g008"></a><div class="figure" data-doi="10.1371/journal.pcbi.1003833.g008"><div class="img-box"><a title="Click for larger image" href="article/figure/image?size=medium&amp;id=info:doi/10.1371/journal.pcbi.1003833.g008" data-doi="info:doi/10.1371/journal.pcbi.1003833" data-uri="info:doi/10.1371/journal.pcbi.1003833.g008"><img src="article/figure/image?size=inline&amp;id=info:doi/10.1371/journal.pcbi.1003833.g008" alt="thumbnail" class="thumbnail"></a><div class="expand"></div></div><div class="figure-inline-download">
+          Download:
+          <ul><li><div class="definition-label"><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g008">
+                  PPT
+                </a></div><a href="article/figure/powerpoint?id=info:doi/10.1371/journal.pcbi.1003833.g008">
+                PowerPoint slide
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g008">
+                  PNG
+                </a></div><a href="article/figure/image?download&amp;size=large&amp;id=info:doi/10.1371/journal.pcbi.1003833.g008">
+                larger image
+              </a></li><li><div class="definition-label"><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g008">
+                  TIFF
+                </a></div><a href="article/figure/image?download&amp;size=original&amp;id=info:doi/10.1371/journal.pcbi.1003833.g008">
+                original image
+              </a></li></ul></div><div class="figcaption"><span>Figure 8. </span> Message trumps beauty.</div><p class="caption_target"><a id="article1.body1.sec10.fig1.caption1.p1" name="article1.body1.sec10.fig1.caption1.p1" class="link-target"></a><p>This figure is an extreme case where the message is particularly clear even if the aesthetic of the figure is questionable. The uncanny valley is a well-known hypothesis in the field of robotics that correlates our comfort level with the human-likeness of a robot. To express this hypothetical nature, hypothetical data were used (<span class="inline-formula"><img src="article/file?type=thumbnail&amp;id=info:doi/10.1371/journal.pcbi.1003833.e005" class="inline-graphic"></span>) and the figure was given a sketched look (xkcd filter on matplotlib) associated with a cartoonish font that enhances the overall effect. Tick labels were also removed since only the overall shape of the curve matters. Using a sketch style conveys to the viewer that the data is approximate, and that it is the higher-level concepts rather than low-level details that are important <a href="#pcbi.1003833-Schumann1" class="ref-tip">[10]</a>.</p>
+</p><p class="caption_object"><a href="https://doi.org/10.1371/journal.pcbi.1003833.g008">
+              https://doi.org/10.1371/journal.pcbi.1003833.g008</a></p></div></div>
+
+<div id="section11" class="section toc-section"><a id="s11" name="s11" data-toc="s11" class="link-target" title="Rule 10: Get the Right Tool"></a><h2>Rule 10: Get the Right Tool</h2><a id="article1.body1.sec11.p1" name="article1.body1.sec11.p1" class="link-target"></a><p>There exist many tools that can make your life easier when creating figures, and knowing a few of them can save you a lot of time. Depending on the type of visual you're trying to create, there is generally a dedicated tool that will do what you're trying to achieve. It is important to understand at this point that the software or library you're using to make a visualization can be different from the software or library you're using to conduct your research and/or analyze your data. You can always export data in order to use it in another tool. Whether drawing a graph, designing a schema of your experiment, or plotting some data, there are open-source tools for you. They're just waiting to be found and used. Below is a small list of open-source tools.</p>
+<a id="article1.body1.sec11.p2" name="article1.body1.sec11.p2" class="link-target"></a><p><strong>Matplotlib</strong> is a python plotting library, primarily for 2-D plotting, but with some 3-D support, which produces publication-quality figures in a variety of hardcopy formats and interactive environments across platforms. It comes with a huge gallery of examples that cover virtually all scientific domains (<a href="http://matplotlib.org/gallery.html">http://matplotlib.org/gallery.html</a>).</p>
+<a id="article1.body1.sec11.p3" name="article1.body1.sec11.p3" class="link-target"></a><p><strong>R</strong> is a language and environment for statistical computing and graphics. R provides a wide variety of statistical (linear and nonlinear modeling, classical statistical tests, time-series analysis, classification, clustering, etc.) and graphical techniques, and is highly extensible.</p>
+<a id="article1.body1.sec11.p4" name="article1.body1.sec11.p4" class="link-target"></a><p><strong>Inkscape</strong> is a professional vector graphics editor. It allows you to design complex figures and can be used, for example, to improve a script-generated figure or to read a PDF file in order to extract figures and transform them any way you like.</p>
+<a id="article1.body1.sec11.p5" name="article1.body1.sec11.p5" class="link-target"></a><p><strong>TikZ and PGF</strong> are TeX packages for creating graphics programmatically. TikZ is built on top of PGF and allows you to create sophisticated graphics in a rather intuitive and easy manner, as shown by the Tikz gallery (<a href="http://www.texample.net/tikz/examples/all/">http://www.texample.net/tikz/examples/all/</a>).</p>
+<a id="article1.body1.sec11.p6" name="article1.body1.sec11.p6" class="link-target"></a><p><strong>GIMP</strong> is the GNU Image Manipulation Program. It is an application for such tasks as photo retouching, image composition, and image authoring. If you need to quickly retouch an image or add some legends or labels, GIMP is the perfect tool.</p>
+<a id="article1.body1.sec11.p7" name="article1.body1.sec11.p7" class="link-target"></a><p><strong>ImageMagick</strong> is a software suite to create, edit, compose, or convert bitmap images from the command line. It can be used to quickly convert an image into another format, and the huge script gallery (<a href="http://www.fmwconcepts.com/imagemagick/index.php">http://www.fmwconcepts.com/imagemagick/index.php</a>) by Fred Weinhaus will provide virtually any effect you might want to achieve.</p>
+<a id="article1.body1.sec11.p8" name="article1.body1.sec11.p8" class="link-target"></a><p><strong>D3.js</strong> (or just D3 for Data-Driven Documents) is a JavaScript library that offers an easy way to create and control interactive data-based graphical forms which run in web browsers, as shown in the gallery at <a href="http://github.com/mbostock/d3/wiki/Gallery">http://github.com/mbostock/d3/wiki/Gallery</a>.</p>
+<a id="article1.body1.sec11.p9" name="article1.body1.sec11.p9" class="link-target"></a><p><strong>Cytoscape</strong> is a software platform for visualizing complex networks and integrating these with any type of attribute data. If your data or results are very complex, cytoscape may help you alleviate this complexity.</p>
+<a id="article1.body1.sec11.p10" name="article1.body1.sec11.p10" class="link-target"></a><p><strong>Circos</strong> was originally designed for visualizing genomic data but can create figures from data in any field. Circos is useful if you have data that describes relationships or multilayered annotations of one or more scales.</p>
+</div>
+
+<div id="section12" class="section toc-section"><a id="s12" name="s12" data-toc="s12" class="link-target" title="Notes"></a><h2>Notes</h2><a id="article1.body1.sec12.p1" name="article1.body1.sec12.p1" class="link-target"></a><p>All the figures for this article were produced using matplotlib, and figure scripts are available from <a href="https://github.com/rougier/ten-rules">https://github.com/rougier/ten-rules</a>.</p>
+</div>
+
+
+
+<div class="toc-section"><a id="references" name="references" class="link-target" data-toc="references" title="References"></a><h2>References</h2><ol class="references"><li id="ref1"><span class="order">1.
+            </span><a name="pcbi.1003833-Tufte1" id="pcbi.1003833-Tufte1" class="link-target"></a>Tufte EG (1983) The Visual Display of Quantitative Information. Cheshire, Connecticut: Graphics Press. <ul class="find-nolinks"></ul></li><li id="ref2"><span class="order">2.
+            </span><a name="pcbi.1003833-Doumont1" id="pcbi.1003833-Doumont1" class="link-target"></a>Doumont JL (2009) Trees, maps, and theorems. Brussels: Principiae. <ul class="find-nolinks"></ul></li><li id="ref3"><span class="order">3.
+            </span><a name="pcbi.1003833-Kosara1" id="pcbi.1003833-Kosara1" class="link-target"></a>Kosara R, Mackinlay J (2013) Storytelling: The next step for visualization. IEEE Comput 46: 44–50. <ul class="reflinks"><li><a href="#" data-author="Kosara" data-cit="KosaraR%2C%20MackinlayJ%20%282013%29%20Storytelling%3A%20The%20next%20step%20for%20visualization.%20IEEE%20Comput%2046%3A%2044%E2%80%9350." data-title="Storytelling%3A%20The%20next%20step%20for%20visualization" target="_new" title="Go to article in CrossRef">
+                      View Article
+                    </a></li><li><a href="http://scholar.google.com/scholar?q=Storytelling%3A+The+next+step+for+visualization+Kosara+2013" target="_new" title="Go to article in Google Scholar">
+                      Google Scholar
+                    </a></li></ul></li><li id="ref4"><span class="order">4.
+            </span><a name="pcbi.1003833-Rougier1" id="pcbi.1003833-Rougier1" class="link-target"></a>Rougier NP (2012) Scientific visualization and matplotlib tutorial. Euroscipy 2012 &amp; 2013. Available: <a href="http://www.loria.fr/~rougier/teaching/matplotlib/matplotlib.html">http://www.loria.fr/~rougier/teaching/matplotlib/matplotlib.html</a>. Accessed 12 August 2014. <ul class="find-nolinks"></ul></li><li id="ref5"><span class="order">5.
+            </span><a name="pcbi.1003833-Borland1" id="pcbi.1003833-Borland1" class="link-target"></a>Borland D, Taylor RM (2007) Rainbow color map (still) considered harmful. IEEE Comput Graph Appl 27: 14–17. <ul class="reflinks"><li><a href="#" data-author="Borland" data-cit="BorlandD%2C%20TaylorRM%20%282007%29%20Rainbow%20color%20map%20%28still%29%20considered%20harmful.%20IEEE%20Comput%20Graph%20Appl%2027%3A%2014%E2%80%9317." data-title="Rainbow%20color%20map%20%28still%29%20considered%20harmful" target="_new" title="Go to article in CrossRef">
+                      View Article
+                    </a></li><li><a href="http://scholar.google.com/scholar?q=Rainbow+color+map+%28still%29+considered+harmful+Borland+2007" target="_new" title="Go to article in Google Scholar">
+                      Google Scholar
+                    </a></li></ul></li><li id="ref6"><span class="order">6.
+            </span><a name="pcbi.1003833-Okabe1" id="pcbi.1003833-Okabe1" class="link-target"></a>Okabe M, Ito K (2008). Color universal design (cud) - how to make figures and presentations that are friendly to colorblind people. Available: <a href="http://jfly.iam.u-tokyo.ac.jp/color/">http://jfly.iam.u-tokyo.ac.jp/color/</a>. Accessed 12 August 2014. <ul class="find-nolinks"></ul></li><li id="ref7"><span class="order">7.
+            </span><a name="pcbi.1003833-Few1" id="pcbi.1003833-Few1" class="link-target"></a>Few S (2011) The chartjunk debate, a close examination of recent findings. Visual Business Intelligence Newsletter. Available: <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/the_chartjunk_debate.pdf">http://www.perceptualedge.com/articles/visual_business_intelligence/the_chartjunk_debate.pdf</a>. Accessed 12 August 2014. <ul class="find-nolinks"></ul></li><li id="ref8"><span class="order">8.
+            </span><a name="pcbi.1003833-Fung1" id="pcbi.1003833-Fung1" class="link-target"></a>Fung K (2005). Junk charts: Recycling chartjunk as junk art. Available: <a href="http://junkcharts.typepad.com">http://junkcharts.typepad.com</a>. Accessed 12 August 2014. <ul class="find-nolinks"></ul></li><li id="ref9"><span class="order">9.
+            </span><a name="pcbi.1003833-Borkin1" id="pcbi.1003833-Borkin1" class="link-target"></a>Borkin MA, Vo AA, Bylinskii Z, Isola P, Sunkavalli S, et al. (2013) What makes a visualization memorable? IEEE Trans Vis Comput Graph 19: 2306–2315. <ul class="reflinks"><li><a href="#" data-author="Borkin" data-cit="BorkinMA%2C%20VoAA%2C%20BylinskiiZ%2C%20IsolaP%2C%20SunkavalliS%2C%20et%20al.%20%282013%29%20What%20makes%20a%20visualization%20memorable%3F%20IEEE%20Trans%20Vis%20Comput%20Graph%2019%3A%202306%E2%80%932315." data-title="What%20makes%20a%20visualization%20memorable%3F" target="_new" title="Go to article in CrossRef">
+                      View Article
+                    </a></li><li><a href="http://scholar.google.com/scholar?q=What+makes+a+visualization+memorable%3F+Borkin+2013" target="_new" title="Go to article in Google Scholar">
+                      Google Scholar
+                    </a></li></ul></li><li id="ref10"><span class="order">10.
+            </span><a name="pcbi.1003833-Schumann1" id="pcbi.1003833-Schumann1" class="link-target"></a>Schumann J, Strothotte T, Raab A, Laser S (1996) Assessing the effect of non-photorealistic rendered images in cad. In: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems; 13–18 April 1996; New York, New York, United States. CHI 96. New York: Association for Computing Machinery. pp.35–41. <ul class="find-nolinks"></ul></li></ol></div>
+
+
+
+          <div class="ref-tooltip">
+             <div class="ref_tooltip-content">
+
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </section>
+    <aside class="article-aside">
+
+
+<!--[if IE 9]>
+<style>
+.dload-xml {margin-top: 38px}
+</style>
+<![endif]-->
+<div class="dload-menu">
+  <div class="dload-pdf">
+    <a href="/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003833&type=printable"
+       id="downloadPdf" target="_blank">Download PDF</a>
+  </div>
+  <div data-js-tooltip-hover="trigger" class="dload-hover">&nbsp;
+    <ul class="dload-xml" data-js-tooltip-hover="target">
+      <li><a href="/ploscompbiol/article/citation?id=10.1371/journal.pcbi.1003833"
+             id="downloadCitation">Citation</a></li>
+      <li><a href="/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003833&type=manuscript"
+             id="downloadXml">XML</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="aside-container">
+
+<div class="print-article" id="printArticle" data-js-tooltip-hover="trigger">
+
+  Print
+  <ul class="print-options" data-js-tooltip-hover="target">
+    <li>
+        <a href="#" onclick="window.print(); return false;" class="preventDefault" id="printBrowser" title="Print
+        Article">Print article</a>
+    </li>
+
+
+
+
+<li>
+<a title="Odyssey Press" href="https://www.odysseypress.com/onlinehost/reprint_order.php?type=A&amp;page=0&amp;journal=3&amp;doi=10.1371%2Fjournal.pcbi.1003833&amp;volume=&amp;issue=&amp;title=Ten%20Simple%20Rules%20for%20Better%20Figures&amp;author_name=Nicolas%20P.%20Rougier%2C%20Michael%20Droettboom%2C%20Philip%20E.%20Bourne&amp;start_page=1&amp;end_page=7">EzReprint  </a>
+</li>
+
+  </ul>
+</div>
+<div class="share-article" id="shareArticle" data-js-tooltip-hover="trigger">
+  Share
+  <ul data-js-tooltip-hover="target" class="share-options" id="share-options">
+
+<li><a href="https://www.reddit.com/submit?url=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833" id="shareReddit" target="_blank" title="Submit to Reddit"><img src="/ploscompbiol/resource/img/icon.reddit.16.png" width="16" height="16" alt="Reddit">Reddit</a></li>
+
+<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833" id="shareGoogle" target="_blank" title="Share on Google+"><img src="/ploscompbiol/resource/img/icon.gplus.16.png" width="16" height="16" alt="Google+">Google+</a></li>
+
+<li><a href="https://www.facebook.com/share.php?u=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833&t=Ten Simple Rules for Better Figures" id="shareFacebook" target="_blank" title="Share on Facebook"><img src="/ploscompbiol/resource/img/icon.fb.16.png" width="16" height="16" alt="Facebook">Facebook</a></li>
+
+<li><a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833&title=Ten Simple Rules for Better Figures&summary=Checkout this article I found at PLOS"  id="shareLinkedIn" target="_blank" title="Add to LinkedIn"><img src="/ploscompbiol/resource/img/icon.linkedin.16.png" width="16" height="16" alt="LinkedIn">LinkedIn</a></li>
+
+<li><a href="http://www.citeulike.org/posturl?url=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833&title=Ten Simple Rules for Better Figures"  id="shareCiteULike" target="_blank" title="Add to CiteULike"><img src="/ploscompbiol/resource/img/icon.cul.16.png" width="16" height="16" alt="CiteULike">CiteULike</a></li>
+
+<li><a href="https://www.mendeley.com/import/?url=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833"  id="shareMendeley" target="_blank" title="Add to Mendeley"><img src="/ploscompbiol/resource/img/icon.mendeley.16.png" width="16" height="16" alt="Mendeley">Mendeley</a></li>
+
+<li><a href="https://www.pubchase.com/library?add_aid=10.1371/journal.pcbi.1003833&source=plos"  id="sharePubChase" target="_blank" title="Add to PubChase"><img src="/ploscompbiol/resource/img/icon.pc.16.png" width="16" height="16" alt="PubChase">PubChase</a></li>
+
+  <li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fdx.plos.org%2F10.1371%2Fjournal.pcbi.1003833&text=%23PLOSCompBio%3A%20Ten Simple Rules for Better Figures" target="_blank" title="share on Twitter" id="twitter-share-link"><img src="/ploscompbiol/resource/img/icon.twtr.16.png" width="16" height="16" alt="Twitter">Twitter</a></li>
+
+<li><a href="/ploscompbiol/article/email?id=10.1371/journal.pcbi.1003833" id="shareEmail" title="Email this article"><img src="/ploscompbiol/resource/img/icon.email.16.png" width="16" height="16" alt="Email">Email</a></li>
+
+  </ul>
+</div></div>
+
+
+ <!-- Crossmark 2.0 widget -->
+<script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
+<a data-target="crossmark"><img width="150" src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_BW_horizontal.svg"></a>
+<!-- End Crossmark 2.0 widget -->
+
+
+
+
+
+
+<div class="aside-container">
+  <h3>Included in the Following Collection</h3>
+  <ul id="collectionList">
+    <li>
+        <a href="https://collections.plos.org/ten-simple-rules">Ten Simple Rules</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="skyscraper-container">
+  <div class="title">Advertisement</div>
+<!-- DoubleClick Ad Zone -->
+  <div class='advertisement' id='div-gpt-ad-1458247671871-1' style='width:160px; height:600px;'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1458247671871-1'); });
+    </script>
+  </div>
+</div>
+
+
+
+
+<div class="subject-areas-container">
+  <h3>Subject Areas <div id="subjInfo">?</div>
+    <div id="subjInfoText">
+      <p>For more information about PLOS Subject Areas, click
+        <a href="https://github.com/PLOS/plos-thesaurus/blob/develop/README.md" target="_blank" title="Link opens in new window">here</a>.</p>
+      <span class="inline-intro">We want your feedback.</span> Do these Subject Areas make sense for this article? Click the target next to the incorrect Subject Area and let us know. Thanks for your help!
+
+
+    </div>
+  </h3>
+  <ul id="subjectList">
+      <li>
+              <a class="taxo-term" title="Search for articles about Data visualization"
+                 href="/ploscompbiol/search?filterSubjects=Data+visualization&filterJournals=PLoSCompBiol&q=">Data visualization</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Data visualization"><p class="taxo-explain">Is the Subject Area <strong>"Data visualization"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Vision"
+                 href="/ploscompbiol/search?filterSubjects=Vision&filterJournals=PLoSCompBiol&q=">Vision</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Vision"><p class="taxo-explain">Is the Subject Area <strong>"Vision"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Software tools"
+                 href="/ploscompbiol/search?filterSubjects=Software+tools&filterJournals=PLoSCompBiol&q=">Software tools</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Software tools"><p class="taxo-explain">Is the Subject Area <strong>"Software tools"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Software design"
+                 href="/ploscompbiol/search?filterSubjects=Software+design&filterJournals=PLoSCompBiol&q=">Software design</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Software design"><p class="taxo-explain">Is the Subject Area <strong>"Software design"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Radii"
+                 href="/ploscompbiol/search?filterSubjects=Radii&filterJournals=PLoSCompBiol&q=">Radii</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Radii"><p class="taxo-explain">Is the Subject Area <strong>"Radii"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Eye movements"
+                 href="/ploscompbiol/search?filterSubjects=Eye+movements&filterJournals=PLoSCompBiol&q=">Eye movements</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Eye movements"><p class="taxo-explain">Is the Subject Area <strong>"Eye movements"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Research design"
+                 href="/ploscompbiol/search?filterSubjects=Research+design&filterJournals=PLoSCompBiol&q=">Research design</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Research design"><p class="taxo-explain">Is the Subject Area <strong>"Research design"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+      <li>
+              <a class="taxo-term" title="Search for articles about Seismic signal processing"
+                 href="/ploscompbiol/search?filterSubjects=Seismic+signal+processing&filterJournals=PLoSCompBiol&q=">Seismic signal processing</a>
+        <span class="taxo-flag">&nbsp;</span>
+        <div class="taxo-tooltip" data-categoryname="Seismic signal processing"><p class="taxo-explain">Is the Subject Area <strong>"Seismic signal processing"</strong> applicable to this article?
+          <button id="noFlag" data-action="remove">Yes</button>
+          <button id="flagIt" value="flagno" data-action="add">No</button></p>
+          <p class="taxo-confirm">Thanks for your feedback.</p>
+        </div>
+      </li>
+  </ul>
+</div>
+<div id="subjectErrors"></div>
+
+
+<div class="twitter-container">
+  <h3>Archived Tweets</h3>
+  <ul id="tweetList">
+
+  </ul>
+  <div class="load-more">Load more <span></span></div>
+  <div class="view-all"><a href="https://alm.plos.org/works/doi.org/10.1371/journal.pcbi.1003833?source_id=twitter">View all tweets</a>
+  </div>
+</div>
+
+<script type="text/template" id="twitterModuleItemTemplate">
+  <% _.each(items, function(item) { %>
+    <li>
+      <div class="tweet-info">
+        <a href="https://twitter.com/<%= item.user %>">
+          <span class="imgholder">
+            <img class="imgLoad" src="<%= item.user_profile_image %>">
+          </span>
+          <div class="tweetDate"><%= item.created_at %></div>
+          <div class="tweetUser">
+            <strong><%= item.user_name %></strong>
+            <span>@<%= item.user %></span>
+          </div>
+        </a>
+      </div>
+      <div class="tweetText">
+        <%= item.text %>
+      </div>
+      <div id="tweetActions">
+        <a class="tweet-reply" href="https://twitter.com/intent/tweet?in_reply_to<%= item.id %>&amp;text=@<%= item.user %>">
+          <div>&nbsp;</div> Reply
+        </a>
+        <a class="tweet-retweet" href="https://twitter.com/intent/retweet?tweet_id=<%= item.id %>">
+          <div>&nbsp;</div> Retweet
+        </a>
+        <a class="tweet-favorite" href="https://twitter.com/intent/favorite?tweet_id=<%= item.id %>">
+          <div>&nbsp;</div> Favorite
+        </a>
+      </div>
+    </li>
+  <% }); %>
+</script>
+
+
+    </aside>
+  </div>
+
+
+
+
+</main>
+
+<footer id="pageftr">
+  <div class="row">
+    <div class="brand-column">
+
+      <img src="/ploscompbiol/resource/img/logo-plos-footer.png" alt="PLOS" class="logo-footer"/>
+      <p class="nav-special">
+
+&nbsp;
+<!--
+  Webapp build:  3.7.1 at 20180905 by teamcity, commit: 
+  Service build: 2.4.9 at 20180905 by teamcity, commit: 
+  Enabled dev features: []
+  -->
+      </p>
+
+<ul class="nav-aux">
+  <li><a href="https://www.plos.org/privacy-policy" id="ftr-privacy">Privacy Policy</a></li>
+  <li><a href="https://www.plos.org/terms-of-use" id="ftr-terms">Terms of Use</a></li>
+  <li><a href="https://www.plos.org/advertise/" id="ftr-advertise">Advertise</a></li>
+  <li><a href="https://www.plos.org/media-inquiries" id="ftr-media">Media Inquiries</a></li>
+</ul>
+    </div>
+    <div class="link-column">
+
+<p class="nav-special"><a href="https://www.plos.org/publications/journals/">Publications</a></p>
+
+<div class="nav">
+  <ul>
+    <li><a href="/plosbiology/" id="ftr-bio">PLOS Biology</a></li>
+    <li><a href="/plosmedicine/" id="ftr-med">PLOS Medicine</a></li>
+    <li><a href="/ploscompbiol/" id="ftr-compbio">PLOS Computational Biology</a></li>
+    <li><a href="http://currents.plos.org" id="ftr-cur">PLOS Currents</a></li>
+    <li><a href="/plosgenetics/" id="ftr-gen">PLOS Genetics</a></li>
+    <li><a href="/plospathogens/" id="ftr-path">PLOS Pathogens</a></li>
+    <li><a href="/plosone/" id="ftr-one">PLOS ONE</a></li>
+    <li><a href="/plosntds/" id="ftr-ntds">PLOS Neglected Tropical Diseases</a></li>
+  </ul>
+</div>
+    </div>
+    <div class="link-column">
+
+<div class="nav nav-special">
+  <p><a href="https://www.plos.org" id="ftr-home">plos.org</a></p>
+
+  <p><a href="https://blogs.plos.org" id="ftr-blog">Blogs</a></p>
+
+  <p><a href="https://collections.plos.org" id="ftr-collections">Collections</a></p>
+
+  <p><a href="/ploscompbiol/feedback" id="ftr-feedback">Send us feedback</a></p>
+  <p><a href="https://www.plos.org/contact">Contact</a></p>
+  <p><a href="/ploscompbiol/lockss-manifest" id="ftr-lockss">LOCKSS</a></p>
+
+<p class="footer-non-profit-statement">PLOS is a nonprofit 501(c)(3) corporation, #C2354500, and is based in San Francisco, California, US</p></div>
+    </div>
+  </div>
+
+
+</footer>
+
+
+
+
+<script type="text/javascript">
+  var ArticleData = {
+    doi: '10.1371/journal.pcbi.1003833',
+    title: '<article-title xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">Ten Simple Rules for Better Figures<\/article-title>',
+    date: 'Sep 11, 2014'
+  };
+</script>
+
+<script type="text/javascript">
+  var ALM_CONFIG = ALM_CONFIG || {};
+  ALM_CONFIG.hostname = "https://alm.plos.org";
+  ALM_CONFIG.apiKey = "3pezRBRXdyzYW6ztfwft";
+  ALM_CONFIG.host = "https://alm.plos.org/api/v5/articles";
+</script>
+<script type="text/javascript">
+  var ALM_CONFIG = ALM_CONFIG || {};
+  ALM_CONFIG.hostname = "https://alm.plos.org";
+  ALM_CONFIG.apiKey = "3pezRBRXdyzYW6ztfwft";
+  ALM_CONFIG.host = "https://alm.plos.org/api/v5/articles";
+</script>
+
+
+
+
+
+
+<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+
+
+
+
+
+<!-- This file should be loaded before the renderJs, to avoid conflicts with the FigShare, that implements the MathJax also. -->
+
+<!--  mathjax configuration options  -->
+<!-- more can be found at http://docs.mathjax.org/en/latest/ -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  "HTML-CSS": {
+    scale: 100,
+    availableFonts: ["STIX","TeX"],
+    preferredFont: "STIX",
+    webFont: "STIX-Web",
+    linebreaks: { automatic: false }
+  },
+  jax: ["input/MathML", "output/HTML-CSS"]
+});
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"></script>
+
+<script src="/ploscompbiol/resource/compiled/asset_YHJDW5COEXIBARAR7VPDF22ZCTNHYWF5.js"></script>
+<div class="reveal-modal-bg"></div>
+</body>
+</html>
